@@ -1,0 +1,33 @@
+<div class="container">
+    <div class="d-grid gap-2 d-md-flex justify-content-md-end m-5">
+      <a href="/admin/adduser" class="btn btn-success btn-md active" role="button" aria-pressed="true">Add User</a>
+      </div>
+
+<table class="table">
+    <thead>
+      <tr>
+        
+        <th scope="col">Num</th>
+        <th scope="col">User id</th>
+        <th scope="col">UserName</th>
+        <th scope="col">Email</th>
+        <th scope="col">Action</th>
+      
+      </tr>
+    </thead>
+    <tbody>
+      
+        <% for (var i=0;i<userDetails.length;i++) {%>
+          <tr>
+        <th scope="row">1</th>
+        <td><%= userDetails[i]._id %> </td>
+        <td><%= userDetails[i].Name %></td>
+        <td><%= userDetails[i].Email %></td>
+        <td><a class="btn  btn-danger" href="/admin/delete-data?id=<%= userDetails[i]._id %> ">Delete</a>
+        <a class ="btn btn-primary" href="/admin/edit?id=<%= userDetails[i]._id%>">Edit</a></td>
+        <td></td>
+      </tr>
+      <% } %> 
+      </tbody>
+    
+  </table>
